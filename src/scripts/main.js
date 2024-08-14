@@ -81,7 +81,7 @@ function SendEmail() {
     );
 
     gtag("event", "user_register", {
-        email_adress: email_input.value,
+        email_address: email_input.value,
         nickname: nickname_input.value,
     });
 }
