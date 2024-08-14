@@ -68,3 +68,20 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(animateWords, 1000);
     //animateWords();
 });
+
+function SendEmail() {
+    const email_input = document.getElementById("Email");
+    const nickname_input = document.getElementById("Nickname");
+
+    console.log(
+        "Found Email / Nickname : " +
+            email_input.value +
+            " / " +
+            nickname_input.value
+    );
+
+    gtag("event", "user_register", {
+        email_adress: email_input.value,
+        nickname: nickname_input.value,
+    });
+}
