@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let modifiedPos = [...originIndex];
     let already_used = [];
 
-    console.log("ARR :" + modifiedPos);
+    //console.log("ARR :" + modifiedPos);
 
     let middleIndex = Math.floor(words.length / 2);
-    console.log("Mid index : " + middleIndex);
+    //console.log("Mid index : " + middleIndex);
 
     function updateWordPositions() {
         for (index = 0; index < words.length; index++) {
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
             (item) => !already_used.includes(item)
         );
 
-        console.log("Item available : " + availableItems);
+        //console.log("Item available : " + availableItems);
 
         if (availableItems.length === 0) {
             already_used.length = 0; // 배열 초기화
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // 선택된 단어를 already_used 배열에 추가
         already_used.push(selectedItem);
-        console.log("Item selected : " + selectedItem);
+        //console.log("Item selected : " + selectedItem);
 
         // 선택된 단어를 중앙으로 이동
         // 선택된 아이템을 제거
@@ -53,11 +53,11 @@ document.addEventListener("DOMContentLoaded", () => {
             modifiedPos.findIndex((num) => num == selectedItem),
             1
         );
-        console.log("Selected Item deletion : " + modifiedPos);
+        //console.log("Selected Item deletion : " + modifiedPos);
 
         // 선택된 아이템을 중앙에 삽입
         modifiedPos.splice(middleIndex, 0, selectedItem);
-        console.log("Final modified item list : " + modifiedPos);
+        //console.log("Final modified item list : " + modifiedPos);
 
         // 아이템 시각 효과 & 위치 업데이트
         updateWordPositions();
@@ -84,4 +84,12 @@ function SendEmail() {
         email_address: email_input.value,
         nickname: nickname_input.value,
     });
+
+    alert("Registered! Thank you :) We'll contact soon.");
+}
+
+function GoMVP() {
+    gtag("event", "link_mvp");
+
+    location.href = "https://codeztree.xyz";
 }
