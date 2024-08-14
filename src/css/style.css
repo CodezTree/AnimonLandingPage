@@ -1,0 +1,233 @@
+.poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.poppins-extralight {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.poppins-extrabold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.poppins-black {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.poppins-thin-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.poppins-extralight-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.poppins-light-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.poppins-regular-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.poppins-medium-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.poppins-semibold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.poppins-bold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.poppins-extrabold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.poppins-black-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+.left {
+    margin-right: 15px;
+}
+
+.right {
+    position: relative;
+    color: #3399ff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 6px;
+}
+
+.word {
+    text-align: center;
+    opacity: 0.5;
+    transition: all 0.5s ease;
+    margin: 0;
+    line-height: 1.2;
+    transform: translateY(0);
+}
+
+.word.center {
+    opacity: 1;
+    transform: scale(1.2);
+    z-index: 1;
+    text-decoration: underline;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    overflow: hidden;
+    width: 100%; /* 컨테이너의 너비 */
+}
+
+.slider::before,
+.slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+    width: 3rem;
+}
+
+.slider::before {
+    left: 0;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 0.75),
+        rgba(255, 255, 255, 0)
+    );
+}
+
+.slider::after {
+    right: 0;
+    background: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 0.75),
+        rgba(255, 255, 255, 0)
+    );
+}
+
+.slider-track {
+    display: flex;
+    animation: scroll 8s linear infinite;
+}
+
+.slider-track img {
+    width: 30px; /* 각 이미지의 너비 */
+    margin-right: 20px; /* 이미지 사이의 간격 */
+}
+
+.slider-track-re {
+    display: flex;
+    animation: scroll-re 8s linear infinite;
+}
+
+.slider-track-re img {
+    width: 30px; /* 각 이미지의 너비 */
+    margin-right: 20px; /* 이미지 사이의 간격 */
+}
+
+.extrasmall-font {
+    font-size: 0.5rem;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-125%);
+    }
+}
+
+@keyframes scroll-re {
+    0% {
+        transform: translateX(-125%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* 두 번째 슬라이드 그룹을 첫 번째 그룹에 이어 붙이기 위한 스타일 */
+.slider-track:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+}

@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "*": ["src/*"],
+            "images/*": ["src/images/*"],
+            "scripts/*": ["src/scripts/*"]
+        }
+    },
+    "include": ["src/**/*"] // src 폴더의 모든 파일을 포함
+}
