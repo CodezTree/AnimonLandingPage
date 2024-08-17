@@ -100,6 +100,9 @@ function SendEmail() {
         }), // 전송할 데이터
     }).then((response) => {
         if (response.ok) alert("Registered! Thank you :) We'll contact soon.");
+        if (response.status == 500) {
+            alert("Email already registered :)");
+        }
     });
 }
 
