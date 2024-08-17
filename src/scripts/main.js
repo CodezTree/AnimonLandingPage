@@ -80,12 +80,25 @@ function SendEmail() {
             nickname_input.value
     );
 
+    if (email_input.value == "" || nickname_input.value == "") return;
+
     gtag("event", "user_register", {
         email_address: email_input.value,
         nickname: nickname_input.value,
     });
 
-    alert("Registered! Thank you :) We'll contact soon.");
+    fetch("https://example.com/api/data", {
+        method: "POST", // HTTP 메서드 설정
+        headers: {
+            "Content-Type": "application/json", // 요청 헤더 설정
+        },
+        body: JSON.stringify({
+            email: email_input.value,
+            nickname: nickname_input.value,
+        }), // 전송할 데이터
+    }).then((response) => {
+        if (response.ok) alert("Registered! Thank you :) We'll contact soon.");
+    });
 }
 
 function GoMVP() {
