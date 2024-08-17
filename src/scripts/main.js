@@ -80,7 +80,9 @@ function SendEmail() {
             nickname_input.value
     );
 
-    if (email_input.value == "" || nickname_input.value == "") return;
+    if (email_input.value == "" || nickname_input.value == "") {
+        alert("Please fillout whole form.");
+    }
 
     gtag("event", "user_register", {
         email_address: email_input.value,
