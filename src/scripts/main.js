@@ -87,7 +87,7 @@ function SendEmail() {
         nickname: nickname_input.value,
     });
 
-    fetch("https://example.com/api/data", {
+    fetch("https://codeztree.xyz/api/addUserEmailNickname", {
         method: "POST", // HTTP 메서드 설정
         headers: {
             "Content-Type": "application/json", // 요청 헤더 설정
