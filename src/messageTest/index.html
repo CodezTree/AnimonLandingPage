@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Chat Window</title>
+        <link rel="stylesheet" href="styles.css" />
+        <!-- <link rel="stylesheet" href="../output.css" /> -->
+    </head>
+    <body>
+        <!-- Floating Button -->
+        <div class="chat-float-btn" onclick="toggleChatWindow()">
+            💬
+            <div
+                class="chat-notification"
+                id="chatNotification"
+                style="display: none">
+                0
+            </div>
+        </div>
+
+        <!-- Chat Popup Window -->
+        <div class="chat-popup" id="chatPopup">
+            <div class="chat-header">
+                <h4>Room Chat</h4>
+                <button onclick="toggleChatWindow()" class="bg-none text-white">
+                    ✖
+                </button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <!-- Messages will be appended here -->
+            </div>
+            <div class="chat-input">
+                <input
+                    type="text"
+                    id="chatInput"
+                    placeholder="Type a message..." />
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
